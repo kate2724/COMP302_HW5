@@ -5,11 +5,13 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS w_page;
 
 CREATE TABLE w_page (
-    page_id             INT         NOT NULL PRIMARY KEY,
-    page_name           VARCHAR(32),
-    restriction_level   VARCHAR(32),
-    page_length         INT
+    page_id                  INT         NOT NULL PRIMARY KEY,
+    page_name                VARCHAR(32),
+    edit_restriction_level   VARCHAR(32),
+    page_length              INT
 );
+
+INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
 
 -- ------------------   link -- -------------------------------
 DROP TABLE IF EXISTS link;
