@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS w_page;
 
 CREATE TABLE w_page (
     page_id                  INT         NOT NULL PRIMARY KEY,
-    page_name                VARCHAR(32),
+    page_name                VARCHAR(128),
     edit_restriction_level   VARCHAR(32),
     page_length              INT
 );
@@ -23,7 +23,6 @@ INSERT INTO w_page VALUES (289445, 'Malus', 'unregistered', 22809);
 INSERT INTO w_page VALUES (1291988, 'Latin_language', 'autoconfirmed', 108);
 INSERT INTO w_page VALUES (25414, 'Religion', 'autoconfirmed', 164416);
 INSERT INTO w_page VALUES (25955086, 'Jews', 'extendedconfirmed', 179503);
-
 INSERT INTO w_page VALUES (25734, 'Taiwan', 'extendedconfirmed', 341923);
 INSERT INTO w_page VALUES (10553, 'Flute', 'unregistered', 46676);
 INSERT INTO w_page VALUES (50020, 'Hope', 'unregistered', 33745);
@@ -38,7 +37,9 @@ CREATE TABLE link(
     from_id         INT,
     to_id           INT,
     to_page_name    VARCHAR(128),
-    is_external     BOOLEAN
+    is_external     BOOLEAN,
+    FOREIGN KEY (from_id) REFERENCES w_page (page_id)
+
 );
 
 -- link from apple page to other pages -- 
@@ -57,16 +58,22 @@ INSERT INTO link VALUES (10, 18978754, 25414, 'Religion', FALSE);
 -- ------------------   user -- -------------------------------
 DROP TABLE IF EXISTS user;
 
+-- maybe restructure according to his feedback on the last assignment?
 CREATE TABLE user(
     user_id         INT             NOT NULL PRIMARY KEY,
     user_name       VARCHAR(32),
     user_password   VARCHAR(32),
     user_email      VARCHAR(32),
     user_group      VARCHAR(32),
-    last_login      DATE,
+    last_login      INT,
     ip_address      INT,
-    registration_date DATE
+    registration_date INT
 );
+--timestamp format is yyyymmddhhmmss
+---fake data since we can't get users' personal info----
+INSERT INTO user VALUES (0, 'kbreen', 'password', 'kbreen@macalester.edu', 'autoconfirmed', 20230418093045, 192.158.1.38, 20040308222555);
+
+
 
 -- ------------------   revision -- -------------------------------
 DROP TABLE IF EXISTS revision;
@@ -80,6 +87,8 @@ CREATE TABLE revision(
     FOREIGN KEY (user_id) REFERENCES user(user_id),
     FOREIGN KEY (page_id) REFERENCES page(page_id)
 );
+
+-- INSERT INTO revision VALUES (10, 18978754, 25414, 'Religion', FALSE);
 
 -- CREATE TABLE revision_comment(
 --     revision_id INT,
