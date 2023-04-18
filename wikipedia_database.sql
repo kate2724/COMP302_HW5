@@ -1,13 +1,14 @@
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ------------------   page -- -------------------------------
-DROP TABLE IF EXISTS jfj;
 
-CREATE TABLE page(
+DROP TABLE IF EXISTS w_page;
+
+CREATE TABLE w_page (
     page_id             INT         NOT NULL PRIMARY KEY,
     page_name           VARCHAR(32),
     restriction_level   VARCHAR(32),
-    page_length         INT,
+    page_length         INT
 );
 
 -- ------------------   link -- -------------------------------

@@ -1,5 +1,5 @@
 --query 1: Return all the pages that link to the page “Apple”
-
+SHOW TABLES;
 
 --query 2: Return the page that has been revised the most
 
