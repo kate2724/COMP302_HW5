@@ -12,18 +12,46 @@ CREATE TABLE w_page (
 );
 
 INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+-- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
 
 -- ------------------   link -- -------------------------------
 DROP TABLE IF EXISTS link;
 
 CREATE TABLE link(
-    from_id         INT NOT NULL PRIMARY KEY,
-    to_id           INT NOT NULL PRIMARY KEY,
-    to_page_name    VARCHAR(32),
+    link_id         INT NOT NULL PRIMARY KEY,
+    from_id         INT,
+    to_id           INT,
+    to_page_name    VARCHAR(128),
     is_external     BOOLEAN
 );
 
-INSERT INTO w_page VALUES (18978754, 11473533, 'Adam_and_Eve', FALSE);
+INSERT INTO link VALUES (0, 18978754, 11473533, 'Adam_and_Eve', FALSE);
+INSERT INTO link VALUES (1, 18978754, 48739272, 'An_apple_a_day_keeps_the_doctor_away', FALSE);
+INSERT INTO link VALUES (2, 18978754, 9823, 'Eris_(mythology)', FALSE);
+INSERT INTO link VALUES (3, 18978754, 19614253, 'Cider', FALSE);
+INSERT INTO link VALUES (4, 18978754, 30108, 'Tajikistan', FALSE);
+INSERT INTO link VALUES (5, 18978754, 32512, 'Vitamin', FALSE);
+INSERT INTO link VALUES (6, 18978754, 25532, 'Renaissance', FALSE);
+INSERT INTO link VALUES (7, 18978754, 233609, 'Pollination', FALSE);
+INSERT INTO link VALUES (8, 18978754, 289445, 'Malus', FALSE);
+INSERT INTO link VALUES (9, 18978754, 1291988, 'Latin_language', FALSE);
+INSERT INTO link VALUES (10, 18978754, 25414, 'Religion', FALSE);
 
 -- ------------------   user -- -------------------------------
 DROP TABLE IF EXISTS user;
