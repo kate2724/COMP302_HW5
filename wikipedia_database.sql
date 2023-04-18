@@ -17,16 +17,13 @@ INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
 DROP TABLE IF EXISTS link;
 
 CREATE TABLE link(
-    link_id     INT         NOT NULL PRIMARY KEY,
-    from_url    VARCHAR(32),
-    to_url      VARCHAR(32),
-    is_external BOOLEAN,
-    links_from  INT,
-    links_to    INT,
-
-    FOREIGN KEY (links_from) REFERENCES page(page_id),
-    FOREIGN KEY (links_to) REFERENCES page(page_id)
+    from_id         INT NOT NULL PRIMARY KEY,
+    to_id           INT NOT NULL PRIMARY KEY,
+    to_page_name    VARCHAR(32),
+    is_external     BOOLEAN
 );
+
+INSERT INTO w_page VALUES (18978754, 11473533, 'Adam_and_Eve', FALSE);
 
 -- ------------------   user -- -------------------------------
 DROP TABLE IF EXISTS user;
