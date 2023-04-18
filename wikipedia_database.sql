@@ -12,23 +12,23 @@ CREATE TABLE w_page (
 );
 
 INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
--- INSERT INTO w_page VALUES (18978754, 'Apple', 'autoconfirmed', 82179);
+INSERT INTO w_page VALUES (48739272, 'An_apple_a_day_keeps_the_doctor_away', 'unregistered', 5307);
+INSERT INTO w_page VALUES (9823, 'Eris (mythology)', 'unregistered', 16801);
+INSERT INTO w_page VALUES (19614253, 'Cider', 'unregistered', 101000);
+INSERT INTO w_page VALUES (30108, 'Tajikistan', 'unregistered', 157930);
+INSERT INTO w_page VALUES (32512, 'Vitamin', 'autoconfirmed', 67847);
+INSERT INTO w_page VALUES (25532, 'Renaissance', 'autoconfirmed', 119968);
+INSERT INTO w_page VALUES (233609, 'Pollination', 'unregistered', 71206);
+INSERT INTO w_page VALUES (289445, 'Malus', 'unregistered', 22809);
+INSERT INTO w_page VALUES (1291988, 'Latin_language', 'autoconfirmed', 108);
+INSERT INTO w_page VALUES (25414, 'Religion', 'autoconfirmed', 164416);
+INSERT INTO w_page VALUES (25955086, 'Jews', 'extendedconfirmed', 179503);
+
+INSERT INTO w_page VALUES (25734, 'Taiwan', 'extendedconfirmed', 341923);
+INSERT INTO w_page VALUES (10553, 'Flute', 'unregistered', 46676);
+INSERT INTO w_page VALUES (50020, 'Hope', 'unregistered', 33745);
+INSERT INTO w_page VALUES (23953699, 'Androgeny', 'unregistered', 132);
+INSERT INTO w_page VALUES (21265839, 'Bachata', 'unregistered', 768);
 
 -- ------------------   link -- -------------------------------
 DROP TABLE IF EXISTS link;
@@ -41,6 +41,7 @@ CREATE TABLE link(
     is_external     BOOLEAN
 );
 
+-- link from apple page to other pages -- 
 INSERT INTO link VALUES (0, 18978754, 11473533, 'Adam_and_Eve', FALSE);
 INSERT INTO link VALUES (1, 18978754, 48739272, 'An_apple_a_day_keeps_the_doctor_away', FALSE);
 INSERT INTO link VALUES (2, 18978754, 9823, 'Eris_(mythology)', FALSE);
