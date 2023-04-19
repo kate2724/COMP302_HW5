@@ -16,11 +16,21 @@ SELECT * FROM q1 LIMIT 5;
 
 --query 2: Return the page that has been revised the most
 
+DROP TABLE IF EXISTS revision_count_by_page;
 DROP TABLE IF EXISTS q2;
 
-CREATE TABLE q2 AS
+CREATE TABLE revision_count_by_page AS
+SELECT page_id, COUNT(revision_id) AS revision_count
+FROM revision
+GROUP BY page_id;
 
-DROP TABLE IF EXISTS q2;
+CREATE TABLE max_revision_count_with_page AS
+SELECT page_id, MAX(revision_count) AS max_revisions
+FROM revision_count_by_page
+GROUP BY page_id;
+
+
+SELECT * FROM q2;
 
 --query 3: Return all the editors of a particular page
 
