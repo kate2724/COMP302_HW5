@@ -37,6 +37,6 @@ SELECT * FROM q2;
 DROP TABLE IF EXISTS q3;
 
 CREATE TABLE q3 AS
-SELECT user_id FROM revision WHERE page_id = 123;
+SELECT user_id FROM revision WHERE page_id = 18978754;
 
 DROP TABLE IF EXISTS q3;
