@@ -2,10 +2,17 @@
 SHOW TABLES;
 
 DROP TABLE IF EXISTS q1;
-
 CREATE TABLE q1 AS
-
-DROP TABLE IF EXISTS q1;
+SELECT DISTINCT to_id
+FROM
+    (SELECT * 
+    FROM w_page
+    WHERE page_name = 'Apple') A
+    JOIN
+    link B
+    ON A.page_id = B.from_id;
+ALTER TABLE q1 ADD PRIMARY KEY(page_id);
+SELECT * FROM q1;
 
 --query 2: Return the page that has been revised the most
 
