@@ -5,12 +5,12 @@ DROP TABLE IF EXISTS q1;
 CREATE TABLE q1 AS
 SELECT DISTINCT to_id
 FROM
+    link A
+    JOIN
     (SELECT * 
     FROM w_page
-    WHERE page_name = 'Apple') A
-    JOIN
-    link B
-    ON A.page_id = B.from_id;
+    WHERE page_name = 'Apple') B
+    ON A.from_id = B.page_id;
 ALTER TABLE q1 ADD PRIMARY KEY(page_id);
 SELECT * FROM q1 LIMIT 5;
 
