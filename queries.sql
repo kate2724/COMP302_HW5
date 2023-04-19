@@ -12,7 +12,7 @@ FROM
     link B
     ON A.page_id = B.from_id;
 ALTER TABLE q1 ADD PRIMARY KEY(page_id);
-SELECT * FROM q1;
+SELECT * FROM q1 LIMIT 5;
 
 --query 2: Return the page that has been revised the most
 
