@@ -96,22 +96,23 @@ DROP TABLE IF EXISTS revision;
 
 CREATE TABLE revision(
     revision_id INT NOT NULL PRIMARY KEY,
-    date_time DATE,
-    rev_length INT,
     page_id INT,
     user_id INT,
+    r_date INTEGER,
+    rev_length INT,
     FOREIGN KEY (user_id) REFERENCES user(user_id),
     FOREIGN KEY (page_id) REFERENCES page(page_id)
 );
 
--- INSERT INTO revision VALUES (10, 18978754, 25414, 'Religion', FALSE);
+INSERT INTO revision VALUES (0, 18978754, 0, 20230415, 7922);
+INSERT INTO revision VALUES (1, 18978754, 0, 20203415, 88);
+INSERT INTO revision VALUES (2, 18978754, 3, 20210515, 159);
+INSERT INTO revision VALUES (3, 18978754, 0, 20220815, 265);
+INSERT INTO revision VALUES (4, 18978754, 0, 20210412, 159);
 
--- CREATE TABLE revision_comment(
---     revision_id INT,
---     comment_hash INT,
---     comment_test VARCHAR(32),
---     FOREIGN KEY (revision_id) REFERENCES revision(revision_id),
---     PRIMARY KEY (revision_id)
--- )
+INSERT INTO revision VALUES (5, 19614253, 2, 20191124, 33);
+INSERT INTO revision VALUES (6, 19614253, 3, 20210411, 21);
+INSERT INTO revision VALUES (7, 19614253, 4, 20230916, 8499);
 
+INSERT INTO revision VALUES (8, 25414, 5, 20211229, 4564);
 SET FOREIGN_KEY_CHECKS=1;
