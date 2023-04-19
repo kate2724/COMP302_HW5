@@ -17,22 +17,20 @@
 
 --query 2: Return the page that has been revised the most
 
--- DROP TABLE IF EXISTS revision_count_by_page;
--- DROP TABLE IF EXISTS max_revision_count_with_page;
+DROP TABLE IF EXISTS revision_count_by_page;
+DROP TABLE IF EXISTS page_with_most_revisions;
 
--- CREATE TABLE revision_count_by_page AS
--- SELECT page_id, COUNT(r_date) AS revision_count
--- FROM revision
--- GROUP BY page_id;
+CREATE TABLE revision_count_by_page AS
+SELECT page_id, COUNT(r_date) AS revision_count
+FROM revision
+GROUP BY page_id;
 
--- CREATE TABLE max_revision_count_with_page AS
--- SELECT page_id
--- FROM revision_count_by_page
--- WHERE max_revisions = ( SELECT MAX(revision_count) FROM revision_count_by_page) ;
--- -- GROUP BY page_id;
+CREATE TABLE page_with_most_revisions AS
+SELECT  page_id
+FROM revision_count_by_page
+WHERE revision_count = ( SELECT MAX(revision_count) FROM revision_count_by_page);
 
-
--- SELECT * FROM max_revision_count_with_page;
+SELECT * FROM page_with_most_revisions;
 
 --query 3: Return all the editors of a particular page
 
