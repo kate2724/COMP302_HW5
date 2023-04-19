@@ -84,12 +84,12 @@ CREATE TABLE user_group(
     PRIMARY KEY(user_id)
 );
 
-INSERT INTO user_group VALUES (0, "autoconfirmed");
--- INSERT INTO user_group VALUES (1, );
--- INSERT INTO user_group VALUES (2, );
--- INSERT INTO user_group VALUES (3, );
--- INSERT INTO user_group VALUES (4, );
--- INSERT INTO user_group VALUES (5, );
+INSERT INTO user_group VALUES (0, "reviewer");
+INSERT INTO user_group VALUES (1, "sysop");
+INSERT INTO user_group VALUES (2, "extendedconfirmed");
+INSERT INTO user_group VALUES (3, "extendedconfirmed");
+INSERT INTO user_group VALUES (4, "autoreviewer");
+INSERT INTO user_group VALUES (5, "reviewer");
 
 -- ------------------   revision -- -------------------------------
 DROP TABLE IF EXISTS revision;
