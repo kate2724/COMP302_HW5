@@ -26,11 +26,11 @@ GROUP BY page_id;
 
 CREATE TABLE max_revision_count_with_page AS
 SELECT page_id, MAX(revision_count) AS max_revisions
-FROM revision_count_by_page
+FROM revision_count_by_page;
 GROUP BY page_id;
 
 
-SELECT * FROM revision_count_by_page;
+SELECT * FROM max_revision_count_with_page;
 
 --query 3: Return all the editors of a particular page
 
