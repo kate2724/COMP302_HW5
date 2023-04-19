@@ -63,17 +63,33 @@ CREATE TABLE user(
     user_id         INT             NOT NULL PRIMARY KEY,
     user_name       VARCHAR(32),
     user_password   VARCHAR(32),
-    user_email      VARCHAR(32),
-    user_group      VARCHAR(32),
-    last_login      INT,
-    ip_address      INT,
-    registration_date INT
+    user_email      VARCHAR(32)
 );
---timestamp format is yyyymmddhhmmss
----fake data since we can't get users' personal info----
-INSERT INTO user VALUES (0, 'kbreen', 'password', 'kbreen@macalester.edu', 'autoconfirmed', 20230418093045, 192.158.1.38, 20040308222555);
+---fake data since we don't have access to users' personal info----
+INSERT INTO user VALUES (0, 'kbreen', 'password', 'kbreen@macalester.edu');
+INSERT INTO user VALUES (1, 'AxelBoldt', '12345', 'aboldt@macalester.edu');
+INSERT INTO user VALUES (2, 'Magnus Manske', 'OVERTHEGARDENWALL', 'mmanske@macalester.edu');
+INSERT INTO user VALUES (3, 'JvaGoddess', 'pemnv93na', 'jgoddess@macalester.edu');
+INSERT INTO user VALUES (4, 'Eloquence', '@^Fsskjj$', 'eloquence@macalester.edu');
+INSERT INTO user VALUES (5, 'Tuxisuau', 'jjjjjjjjjdkfds', 'tuxisuau@macalester.edu');
 
 
+-- ------------------   user group -- -------------------------------
+DROP TABLE IF EXISTS user_group;
+
+-- maybe restructure according to his feedback on the last assignment?
+CREATE TABLE user_group(
+    user_id         INT     NOT NULL    REFERENCES user(user_id),
+    user_group      VARCHAR(128),
+    PRIMARY KEY(user_id)
+);
+
+INSERT INTO user_group VALUES (0, "autoconfirmed");
+-- INSERT INTO user_group VALUES (1, );
+-- INSERT INTO user_group VALUES (2, );
+-- INSERT INTO user_group VALUES (3, );
+-- INSERT INTO user_group VALUES (4, );
+-- INSERT INTO user_group VALUES (5, );
 
 -- ------------------   revision -- -------------------------------
 DROP TABLE IF EXISTS revision;
